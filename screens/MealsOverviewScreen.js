@@ -43,7 +43,7 @@ function MealsOverviewScreen({ route, navigation }) {
   };
 
   return (
-    <View style={styles.constainer}>
+    <View style={styles.container}>
       <FlatList
         data={displayedMeals}
         keyExtractor={(item) => item.id}
@@ -56,7 +56,7 @@ function MealsOverviewScreen({ route, navigation }) {
 export default MealsOverviewScreen;
 
 const styles = StyleSheet.create({
-  constainer: {
+  container: {
     flex: 1,
     padding: 16,
   },
