@@ -5,21 +5,34 @@ import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/MealDetails/Subtitle";
 import List from "../components/MealDetails/List";
 import IconButton from "../components/IconButton";
+import { useFavourite } from "../store/context/favourites-context";
 
 function MealDetailsScreen({ route, navigation }) {
   const mealId = route.params.mealId;
 
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
-  const pressHandler = () => {
-    console.log("pressed");
+  const { ids, addFavourite, removeFavourite } = useFavourite();
+
+  const mealIsFavourite = ids.includes(mealId);
+
+  const changeFavouriteStatusHandler = () => {
+    if (mealIsFavourite) {
+      removeFavourite(mealId);
+    } else {
+      addFavourite(mealId);
+    }
   };
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
         return (
-          <IconButton icon={"star"} onPress={pressHandler} color={"white"} />
+          <IconButton
+            icon={mealIsFavourite ? "star" : "star-outline"}
+            onPress={changeFavouriteStatusHandler}
+            color={"white"}
+          />
         );
       },
     });
