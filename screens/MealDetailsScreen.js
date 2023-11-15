@@ -36,7 +36,7 @@ function MealDetailsScreen({ route, navigation }) {
         );
       },
     });
-  }, []);
+  }, [changeFavouriteStatusHandler]);
 
   return (
     <ScrollView style={styles.rootContainer}>

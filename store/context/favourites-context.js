@@ -15,7 +15,7 @@ export const FavouritesProvider = ({ children }) => {
 
   const removeFavourite = (id) => {
     setFavouriteMealIds((currentFavouriteIds) =>
-      currentFavouriteIds.filter(mealId !== id)
+      currentFavouriteIds.filter((mealId) => mealId !== id)
     );
   };
 

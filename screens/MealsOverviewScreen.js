@@ -19,7 +19,7 @@ function MealsOverviewScreen({ route, navigation }) {
     });
   }, [catId, navigation]);
 
-  <MealsList items={displayedMeals} />;
+  return <MealsList items={displayedMeals} />;
 }
 
 export default MealsOverviewScreen;

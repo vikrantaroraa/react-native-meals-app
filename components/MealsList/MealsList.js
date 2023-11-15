@@ -1,8 +1,11 @@
 import React from "react";
 import { View, FlatList, StyleSheet } from "react-native";
 import MealItem from "./MealItem";
+import { useNavigation } from "@react-navigation/native";
 
 function MealsList({ items }) {
+  const navigation = useNavigation();
+
   const renderMealItem = (itemData) => {
     const { title, imageUrl, duration, complexity, affordability } =
       itemData.item;
