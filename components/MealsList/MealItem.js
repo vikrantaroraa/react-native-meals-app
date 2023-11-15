@@ -7,7 +7,7 @@ import {
   Platform,
   StyleSheet,
 } from "react-native";
-import MealDetails from "./MealDetails";
+import MealDetails from "../MealDetails";
 
 function MealItem({
   title,
